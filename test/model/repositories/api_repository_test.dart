@@ -9,22 +9,20 @@ class MockApiService extends Mock implements ApiService{};
 void main() {
   ApiService apiService;
   ApiRepository sut;
-  UserEntity userEntity;
 
   setUp(() {
     apiService = MockApiService();
     sut = .new(apiService);
-    userEntity = mockUserEntity();
   });
 
   test(
     'Deve retornar uma UserViewModel quando receber um JSON da service',
     () async {
-      when(() => apiService.get()).thenAnswer((_) async => mockMap);
+      when(() => apiService.get()).thenAnswer((_) async => mockJson);
 
-      final result = await sut.get();
+      final result = await sut.getFirstUser();
 
-      expect(result, mockUserViewModel);
+      expect(result, mockUserEntity);
     },
   );
 }

@@ -16,4 +16,27 @@ class Mapper {
   static const title = 'title';
   static const first = 'first';
   static const last = 'last';
+  static const timezone = 'timezone';
+  static const coordinates = 'coordinates';
+  static const postcode = 'postcode';
+  static const country = 'country';
+  static const state = 'state';
+  static const city = 'city';
+  static const street = 'street';
+  static const number = 'number';
+  static const longitude = 'longitude';
+  static const latitude = 'latitude';
+  static const description = 'description';
+  static const offset = 'offset';
+  static const sha256 = 'sha256';
+  static const sha1 = 'sha1';
+  static const md5 = 'md5';
+  static const salt = 'salt';
+  static const password = 'password';
+  static const username = 'username';
+  static const uuid = 'uuid';
+  static const value = 'value';
+  static const large = 'large';
+  static const medium = 'medium';
+  static const thumbnail = 'thumbnail';
 }

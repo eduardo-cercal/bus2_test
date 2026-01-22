@@ -1,4 +1,6 @@
-final mockMap = {
+import 'package:bus2_test/view_model/entities/user_entity.dart';
+
+final Map<String, dynamic> mockJson = {
   "results": [
     {
       "gender": "male",
@@ -46,3 +48,5 @@ final mockMap = {
     "version": "1.4",
   },
 };
+
+final mockUserEntity = UserEntity.fromJson(mockJson['results'].first);
