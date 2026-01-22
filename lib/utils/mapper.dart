@@ -1,4 +1,5 @@
 class Mapper {
+  static const apiUrl = 'https://randomuser.me/api/';
   static const gender = 'gender';
   static const name = 'name';
   static const location = 'location';
@@ -39,4 +40,5 @@ class Mapper {
   static const large = 'large';
   static const medium = 'medium';
   static const thumbnail = 'thumbnail';
+  static const results = 'results';
 }

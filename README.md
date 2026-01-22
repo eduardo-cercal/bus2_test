@@ -45,7 +45,7 @@ Copie o projeto em sua maquina, abra-o em um editor de código de sua preferenci
 
 #### Chamadas de API
 
-[Http](https://pub.dev/packages/http)
+[Dio](https://pub.dev/packages/dio)
 
 #### Testes unitarios
 
