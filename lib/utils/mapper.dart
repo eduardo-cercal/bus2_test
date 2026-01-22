@@ -41,4 +41,5 @@ class Mapper {
   static const medium = 'medium';
   static const thumbnail = 'thumbnail';
   static const results = 'results';
+  static const users = 'users';
 }

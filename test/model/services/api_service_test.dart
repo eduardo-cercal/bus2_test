@@ -15,8 +15,7 @@ void main() {
 
   setUp(() {
     dio = MockDio();
-    sut = ApiService(dio);
-    registerFallbackValue(Uri());
+    sut = .new(dio);
   });
 
   test('Quando chamar a String do http deve retornar um JSON', () async {

@@ -18,3 +18,8 @@ class NotFoundFailure implements Failures {
   @override
   String get message => 'A url chamada não foi encontrada';
 }
+
+class EmptyListFailure implements Failures {
+  @override
+  String get message => '';
+}
