@@ -1,6 +1,6 @@
 import 'package:bus2_test/model/services/api_service.dart';
 import 'package:bus2_test/utils/mapper.dart';
-import 'package:bus2_test/view_model/entities/user_entity.dart';
+import 'package:bus2_test/view_models/entities/user_entity.dart';
 
 class ApiRepository {
   final ApiService apiService;

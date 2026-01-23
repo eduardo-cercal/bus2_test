@@ -1,5 +1,5 @@
 import 'package:bus2_test/utils/mapper.dart';
-import 'package:bus2_test/view_model/entities/generic_with_name_entity.dart';
+import 'package:bus2_test/view_models/entities/generic_with_name_entity.dart';
 
 class StreetEntity extends GenericWithNameEntity {
   final int number;

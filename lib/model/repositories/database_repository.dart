@@ -1,6 +1,6 @@
 import 'package:bus2_test/model/services/database_service.dart';
 import 'package:bus2_test/utils/failures.dart';
-import 'package:bus2_test/view_model/entities/user_entity.dart';
+import 'package:bus2_test/view_models/entities/user_entity.dart';
 
 class DatabaseRepository {
   final DatabaseService databaseService;

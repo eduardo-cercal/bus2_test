@@ -1,5 +1,5 @@
 import 'package:bus2_test/utils/mapper.dart';
-import 'package:bus2_test/view_model/entities/entity.dart';
+import 'package:bus2_test/view_models/entities/entity.dart';
 import 'package:equatable/equatable.dart';
 
 class PictureEntity extends Equatable implements Entity {

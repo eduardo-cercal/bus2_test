@@ -1,8 +1,8 @@
 import 'package:bus2_test/utils/mapper.dart';
-import 'package:bus2_test/view_model/entities/coordinates_entity.dart';
-import 'package:bus2_test/view_model/entities/entity.dart';
-import 'package:bus2_test/view_model/entities/street_entity.dart';
-import 'package:bus2_test/view_model/entities/time_zone_entity.dart';
+import 'package:bus2_test/view_models/entities/coordinates_entity.dart';
+import 'package:bus2_test/view_models/entities/entity.dart';
+import 'package:bus2_test/view_models/entities/street_entity.dart';
+import 'package:bus2_test/view_models/entities/time_zone_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class LocationEntity extends Equatable implements Entity {

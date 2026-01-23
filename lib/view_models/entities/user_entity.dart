@@ -1,11 +1,11 @@
 import 'package:bus2_test/utils/mapper.dart';
-import 'package:bus2_test/view_model/entities/date_entity.dart';
-import 'package:bus2_test/view_model/entities/entity.dart';
-import 'package:bus2_test/view_model/entities/id_entity.dart';
-import 'package:bus2_test/view_model/entities/location_entity.dart';
-import 'package:bus2_test/view_model/entities/login_entity.dart';
-import 'package:bus2_test/view_model/entities/name_entity.dart';
-import 'package:bus2_test/view_model/entities/picture_entity.dart';
+import 'package:bus2_test/view_models/entities/date_entity.dart';
+import 'package:bus2_test/view_models/entities/entity.dart';
+import 'package:bus2_test/view_models/entities/id_entity.dart';
+import 'package:bus2_test/view_models/entities/location_entity.dart';
+import 'package:bus2_test/view_models/entities/login_entity.dart';
+import 'package:bus2_test/view_models/entities/name_entity.dart';
+import 'package:bus2_test/view_models/entities/picture_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class UserEntity extends Equatable implements Entity {

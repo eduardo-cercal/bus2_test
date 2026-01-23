@@ -1,4 +1,4 @@
-import 'package:bus2_test/view_model/entities/user_entity.dart';
+import 'package:bus2_test/view_models/entities/user_entity.dart';
 
 final Map<String, dynamic> mockJson = {
   "results": [
