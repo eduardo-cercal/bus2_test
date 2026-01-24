@@ -30,4 +30,12 @@ class HomeViewModel extends GetxController {
     required UserEntity user,
     required List<UserEntity> list,
   }) async => _databaseRepository.saveUser(user: user, list: list);
+
+  Future<List<UserEntity>> getUserList() async {
+    try {
+      return await _databaseRepository.getUserList();
+    } on EmptyListFailure {
+      return [];
+    }
+  }
 }

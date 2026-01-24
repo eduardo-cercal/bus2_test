@@ -73,4 +73,32 @@ void main() {
       ).called(1);
     });
   });
+
+  group('Get User List', () {
+    test(
+      'Deve retornar uma lista de UserEntity quando chamar o metodo',
+      () async {
+        when(
+          () => databaseRepository.getUserList(),
+        ).thenAnswer((_) async => mockUserList);
+
+        final result = await sut.getUserList();
+
+        expect(result, mockUserList);
+      },
+    );
+
+    test(
+      'Deve retornar uma lista vazia quando a repository lançar uma excessao',
+      () async {
+        when(
+          () => databaseRepository.getUserList(),
+        ).thenThrow(EmptyListFailure());
+
+        final result = await sut.getUserList();
+
+        expect(result, []);
+      },
+    );
+  });
 }

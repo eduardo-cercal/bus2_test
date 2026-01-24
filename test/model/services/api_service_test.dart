@@ -44,7 +44,7 @@ void main() {
       expect(failure, throwsA(TypeMatcher<UnexpectedFailure>()));
     },
   );
-  test('Quando receber um resposta com 500, deve lancar uma ServerFailure', () {
+  test('Quando receber um resposta com 500, deve lançar uma ServerFailure', () {
     when(() => dio.get(any())).thenAnswer(
       (_) async =>
           Response(statusCode: 500, data: {}, requestOptions: RequestOptions()),
