@@ -32,7 +32,7 @@ void main() {
     );
 
     test('Quando receber uma lista vazia deve lançar uma Failure', () async {
-      when(() => databaseService.getUserList()).thenAnswer((_) async => []);
+      when(() => databaseService.getUserList()).thenAnswer((_) async => '');
 
       final failure = sut.getUserList();
 

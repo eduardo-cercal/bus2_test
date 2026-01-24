@@ -10,7 +10,7 @@ class LocationEntity extends Equatable implements Entity {
   final String city;
   final String state;
   final String country;
-  final int postcode;
+  final String postcode;
   final CoordinatesEntity coordinatesEntity;
   final TimeZoneEntity timeZoneEntity;
 
@@ -29,7 +29,7 @@ class LocationEntity extends Equatable implements Entity {
     city: json[Mapper.city],
     state: json[Mapper.state],
     country: json[Mapper.country],
-    postcode: json[Mapper.postcode],
+    postcode: json[Mapper.postcode].toString(),
     coordinatesEntity: .fromJson(json[Mapper.coordinates]),
     timeZoneEntity: .fromJson(json[Mapper.timezone]),
   );

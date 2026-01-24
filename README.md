@@ -51,3 +51,7 @@ Copie o projeto em sua maquina, abra-o em um editor de código de sua preferenci
 
 - [Mocktail](https://pub.dev/packages/mocktail)
 - [Equatable](https://pub.dev/packages/equatable)
+
+#### Pacotes para UI
+
+- [material_symbols_icons](https://pub.dev/packages/material_symbols_icons)

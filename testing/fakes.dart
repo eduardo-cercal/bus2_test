@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bus2_test/view_models/entities/user_entity.dart';
 
 final Map<String, dynamic> mockJson = {
@@ -90,6 +92,6 @@ final mockUserJson = {
 
 final mockUserEntity = UserEntity.fromJson(mockJson['results'].first);
 
-final mockJsonList = [mockUserJson, mockUserJson, mockUserJson];
+final mockJsonList = jsonEncode([mockUserJson, mockUserJson, mockUserJson]);
 
 final mockUserList = [mockUserEntity, mockUserEntity, mockUserEntity];

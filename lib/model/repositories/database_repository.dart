@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bus2_test/model/services/database_service.dart';
 import 'package:bus2_test/utils/failures.dart';
 import 'package:bus2_test/view_models/entities/user_entity.dart';
@@ -8,13 +10,17 @@ class DatabaseRepository {
   DatabaseRepository(this.databaseService);
 
   Future<List<UserEntity>> getUserList() async {
-    final result = await databaseService.getUserList();
+    final stringResult = await databaseService.getUserList();
 
-    if (result.isEmpty) {
+    if (stringResult.isEmpty) {
       throw EmptyListFailure();
     }
 
-    return result.map((element) => UserEntity.fromJson(element)).toList();
+    final result = jsonDecode(stringResult);
+
+    return result
+        .map<UserEntity>((element) => UserEntity.fromJson(element))
+        .toList();
   }
 
   Future<void> saveUser({
@@ -22,8 +28,9 @@ class DatabaseRepository {
     required List<UserEntity> list,
   }) async {
     list.insert(0, user);
+
     await databaseService.saveList(
-      list.map((element) => element.toJson()).toList(),
+      jsonEncode(list.map((element) => element.toJson()).toList()),
     );
   }
 
@@ -33,7 +40,7 @@ class DatabaseRepository {
   }) async {
     list.remove(user);
     await databaseService.saveList(
-      list.map((element) => element.toJson()).toList(),
+      jsonEncode(list.map((element) => element.toJson()).toList()),
     );
   }
 }

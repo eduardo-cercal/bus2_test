@@ -6,9 +6,8 @@ class DatabaseService {
 
   DatabaseService(this.box);
 
-  Future<List<Map<String, dynamic>>> getUserList() async =>
-      await box.get(Mapper.users);
+  Future<String> getUserList() async => await box.get(Mapper.users) ?? '';
 
-  Future<void> saveList(List<Map<String, dynamic>> userList) async =>
+  Future<void> saveList(String userList) async =>
       await box.put(Mapper.users, userList);
 }

@@ -16,6 +16,7 @@ dependencies:
     sdk: flutter
   get: ^4.7.3
   hive: ^2.2.3
+  material_symbols_icons: ^4.2892.0
   mocktail: ^1.0.4
 
 dev_dependencies:

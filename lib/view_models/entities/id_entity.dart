@@ -2,7 +2,7 @@ import 'package:bus2_test/utils/mapper.dart';
 import 'package:bus2_test/view_models/entities/generic_with_name_entity.dart';
 
 class IdEntity extends GenericWithNameEntity {
-  final String value;
+  final String? value;
 
   const IdEntity({required super.name, required this.value});
 

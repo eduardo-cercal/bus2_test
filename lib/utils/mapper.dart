@@ -42,4 +42,6 @@ class Mapper {
   static const thumbnail = 'thumbnail';
   static const results = 'results';
   static const users = 'users';
+  static const user = 'user';
+  static const databaseName = 'bus2';
 }

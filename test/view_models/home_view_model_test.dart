@@ -1,7 +1,6 @@
 import 'package:bus2_test/model/repositories/api_repository.dart';
 import 'package:bus2_test/model/repositories/database_repository.dart';
 import 'package:bus2_test/utils/failures.dart';
-import 'package:bus2_test/view_models/entities/user_entity.dart';
 import 'package:bus2_test/view_models/home_view_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
@@ -98,6 +97,54 @@ void main() {
         final result = await sut.getUserList();
 
         expect(result, []);
+      },
+    );
+  });
+
+  group('increment List', () {
+    test('Deve adicionar a lista observavel quando chamar o metodo', () {
+      sut.addToList(mockUserEntity);
+
+      expect(sut.userList, [mockUserEntity]);
+    });
+  });
+
+  group('execute Commands', () {
+    setUp(() => registerFallbackValue(mockUserEntity));
+    test('Deve executar todos os metodos quando chamado', () async {
+      when(
+        () => apiRepository.getFirstUser(),
+      ).thenAnswer((_) async => mockUserEntity);
+      when(
+        () => databaseRepository.getUserList(),
+      ).thenAnswer((_) async => mockUserList);
+      when(
+        () => databaseRepository.saveUser(
+          user: any(named: 'user'),
+          list: any(named: 'list'),
+        ),
+      ).thenAnswer((_) async {});
+
+      await sut.executeCommands();
+
+      expect(sut.userList, [mockUserEntity]);
+
+      verify(
+        () => databaseRepository.saveUser(
+          user: mockUserEntity,
+          list: mockUserList,
+        ),
+      ).called(1);
+    });
+
+    test(
+      'Deve retornar uma mensagem de erro quando receber uma Failure',
+      () async {
+        when(() => apiRepository.getFirstUser()).thenThrow(NotFoundFailure());
+
+        await sut.executeCommands();
+
+        expect(sut.failure.value, 'A url chamada não foi encontrada');
       },
     );
   });
