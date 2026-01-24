@@ -21,6 +21,7 @@ class UserEntity extends Equatable implements Entity {
   final IdEntity idEntity;
   final PictureEntity pictureEntity;
   final String nat;
+  final bool isSaved;
 
   const UserEntity({
     required this.gender,
@@ -35,6 +36,7 @@ class UserEntity extends Equatable implements Entity {
     required this.idEntity,
     required this.pictureEntity,
     required this.nat,
+    this.isSaved = true,
   });
 
   factory UserEntity.fromJson(Map<String, dynamic> json) => UserEntity(
@@ -50,6 +52,7 @@ class UserEntity extends Equatable implements Entity {
     idEntity: .fromJson(json[Mapper.id]),
     pictureEntity: .fromJson(json[Mapper.picture]),
     nat: json[Mapper.nat],
+    isSaved: json[Mapper.isSaved] ?? true,
   );
 
   @override
@@ -66,7 +69,24 @@ class UserEntity extends Equatable implements Entity {
     Mapper.id: idEntity.toJson(),
     Mapper.picture: pictureEntity.toJson(),
     Mapper.nat: nat,
+    Mapper.isSaved: isSaved,
   };
+
+  UserEntity copyWith(bool? isSaved) => UserEntity(
+    gender: gender,
+    nameEntity: nameEntity,
+    locationEntity: locationEntity,
+    email: email,
+    loginEntity: loginEntity,
+    dobEntity: dobEntity,
+    registerEntity: registerEntity,
+    phone: phone,
+    cell: cell,
+    idEntity: idEntity,
+    pictureEntity: pictureEntity,
+    nat: nat,
+    isSaved: isSaved ?? this.isSaved,
+  );
 
   @override
   List<Object?> get props => [
@@ -82,5 +102,6 @@ class UserEntity extends Equatable implements Entity {
     idEntity,
     pictureEntity,
     nat,
+    isSaved,
   ];
 }

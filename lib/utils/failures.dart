@@ -21,5 +21,5 @@ class NotFoundFailure implements Failures {
 
 class EmptyListFailure implements Failures {
   @override
-  String get message => '';
+  String get message => 'Nenhum usuário salvo';
 }

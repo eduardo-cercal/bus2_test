@@ -44,4 +44,5 @@ class Mapper {
   static const users = 'users';
   static const user = 'user';
   static const databaseName = 'bus2';
+  static const isSaved = 'saved';
 }
