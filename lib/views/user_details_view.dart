@@ -38,6 +38,10 @@ class _UserDetailsViewState extends State<UserDetailsView> {
         child: Obx(
           () => AppBar(
             title: Text('Detalhes do usuário'),
+            leading: BackButton(
+              onPressed: () =>
+                  Get.back(result: widget.viewModel.isInList.isFalse),
+            ),
             actions: widget.viewModel.isLoading.value
                 ? [
                     CircularProgressIndicator.adaptive(

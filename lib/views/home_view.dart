@@ -33,6 +33,12 @@ class _HomeViewState extends State<HomeView>
       }
     });
     _ticker.start();
+
+    widget.viewModel.failure.listen((fail) {
+      if (fail != null) {
+        Get.showSnackbar(GetSnackBar(message: fail));
+      }
+    });
   }
 
   @override

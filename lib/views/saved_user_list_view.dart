@@ -3,6 +3,9 @@ import 'package:bus2_test/views/widgets/user_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../utils/mapper.dart';
+import '../utils/route_name.dart';
+
 class SavedUserListView extends StatefulWidget {
   const SavedUserListView({super.key, required this.viewModel});
 
@@ -40,8 +43,20 @@ class _SavedUserListViewState extends State<SavedUserListView> {
           }
           return ListView.builder(
             itemCount: widget.viewModel.userList.length,
-            itemBuilder: (context, index) =>
-                UserListTile(item: widget.viewModel.userList[index]),
+            itemBuilder: (context, index) => UserListTile(
+              item: widget.viewModel.userList[index],
+              onTap: () async {
+                final isRemoved = await Get.toNamed(
+                  RouteName.userDetails,
+                  arguments: {Mapper.user: widget.viewModel.userList[index]},
+                );
+                if (isRemoved) {
+                  widget.viewModel.userList.remove(
+                    widget.viewModel.userList[index],
+                  );
+                }
+              },
+            ),
           );
         }),
       ),

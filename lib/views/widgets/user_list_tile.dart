@@ -1,13 +1,11 @@
-import 'package:bus2_test/utils/mapper.dart';
-import 'package:bus2_test/utils/route_name.dart';
 import 'package:bus2_test/view_models/entities/user_entity.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class UserListTile extends StatelessWidget {
-  const UserListTile({super.key, required this.item});
+  const UserListTile({super.key, required this.item, required this.onTap});
 
   final UserEntity item;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +19,7 @@ class UserListTile extends StatelessWidget {
           '${item.nameEntity.title}.${item.nameEntity.first} ${item.nameEntity.last}',
         ),
 
-        onTap: () =>
-            Get.toNamed(RouteName.userDetails, arguments: {Mapper.user: item}),
+        onTap: onTap,
       ),
     );
   }
