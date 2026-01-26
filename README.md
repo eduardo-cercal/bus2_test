@@ -1,6 +1,6 @@
 # BUS2 Test
 
-Projeto Flutter de mostra, salva ou delete do banco offile usuários obtidos atraves da chamada dessa [API](https://randomuser.me/api/) 
+Projeto Flutter quem mostra, salva ou delete do banco offline usuários obtidos atraves da chamada dessa [API](https://randomuser.me/api/) 
 
 ## Escopo
 
